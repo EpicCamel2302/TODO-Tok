@@ -1,0 +1,18 @@
+/* TODO: Add dark mode support */
+:root {
+    --primary-color: #007acc;
+}
+
+.container {
+    /* FIXME: Fix layout on mobile devices */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* TODO-OPTIMIZE: Consider using CSS variables for these breakpoints */
+@media (max-width: 768px) {
+    /* REVIEW: Check if these styles work on all browsers */
+    .container {
+        grid-template-columns: 1fr;
+    }
+}

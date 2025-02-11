@@ -1,0 +1,87 @@
+{
+  "name": "to-do-tok",
+  "displayName": "TO-DO Tok",
+  "description": "Tik-Tok brainrot for your TO-DO's",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "todo-tok.start",
+        "title": "TODO Tok: Start Browsing TODOs"
+      }
+    ],
+    "configuration": {
+      "title": "TODO Tok",
+      "properties": {
+        "todotok.todoPattern": {
+          "type": "string",
+          "default": "(?:TODO|TO-DO|TO_DO|FIXME|FIX-ME|FIX_ME|XXX|HACK|BUG|OPTIMIZE|REVIEW)",
+          "description": "Regular expression pattern to match TODOs in your code. By default matches: TODO, TO-DO, TO_DO, FIXME, FIX-ME, FIX_ME, XXX, HACK, BUG, OPTIMIZE, and REVIEW. Supports various comment styles including //, /* */, #, <!--, \"\"\" (Python), and more."
+        },
+        "todotok.includeGlobs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": ["**/*"],
+          "description": "Glob patterns for files to include in TODO search (e.g., [\"**/*.ts\", \"**/*.js\"])"
+        },
+        "todotok.excludeGlobs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.git/**"],
+          "description": "Glob patterns for files to exclude from TODO search"
+        },
+        "todotok.enableGitBlame": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable git blame to show TODO authors (may impact performance)"
+        },
+        "todotok.centerNavigationButtons": {
+          "type": "boolean",
+          "default": true,
+          "description": "Center the next and previous navigation buttons"
+        },
+        "todotok.enableScrollNavigation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable using scroll wheel/touchpad to navigate between TODOs"
+        },
+        "todotok.debug": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable debug logging to VS Code output panel"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.93.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
