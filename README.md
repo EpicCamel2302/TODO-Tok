@@ -1,6 +1,12 @@
 # TODO Tok
 
-A VS Code extension that provides a TikTok-style interface for browsing and managing TODOs in your codebase. Swipe through your TODOs, mark them as complete, and stay on top of your development tasks in a fun and engaging way!
+Got too many TODOs? Got no attention span?
+
+TODO Tok is the Gen Z certified way to manage your TODOs. Put your doomscrolling to good use and actually finish those projects you've been putting off for 18 months. With a TikTok-style interface, you can swipe through your TODOs, FixMe's, and Hacks, and fix them one by one (Or just send them to your AI agent of choice, this is the future oh boy).
+
+Your CTO will love you. You'll have more friends. Your family will actually talk to you. What are you waiting for?
+
+<sub>TODO Tok is not affiliated with TikTok, but if they're cool with it, we're cool with it. By using this extension, you agree to release us from all liability and hold us harmless (especially if you break production, I ain't dealing with all that). TODO Tok is not responsible for any damage to your codebase, your sanity, or your social life. Fix responsibly.</sub>
 
 ## Features
 
@@ -39,6 +45,7 @@ The extension recognizes TODOs in various comment formats:
 (* TODO: OCaml comment *)
 ; TODO: Lisp/Clojure comment
 ```
+Or if you're feeling extra creative, you can use any valid regular expression pattern to match TODOs in your code.
 
 ## Installation
 
